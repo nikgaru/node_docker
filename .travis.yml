@@ -5,3 +5,12 @@ services:
 script:
   - docker build -t nikgaru/node .
   - docker images nikgaru/node
+
+before_deploy:
+  - docker login -u nikgaru -p Winter20%
+
+deploy:
+  provider: script
+  script: docker push nikgaru/node_test
+  on:
+      branch: master
