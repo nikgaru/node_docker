@@ -6,7 +6,6 @@ const app = express();
 const PORT = 4000;
 const client = mongodb.MongoClient;
 
-
 client.connect(config.DB, { useNewUrlParser: true }, (err, db) => { 
     if(err) {
         console.log('database is not connected')
